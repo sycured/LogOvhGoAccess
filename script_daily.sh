@@ -41,8 +41,9 @@ echo "<title>Statistique du site $SITE</title>" >> $DOSSIERGOACCESS$INDEX
 echo "</head>" >> $DOSSIERGOACCESS$INDEX
 echo "<body>" >> $DOSSIERGOACCESS$INDEX
 echo "<h1>Statistique du site $SITE</h1>" >> $DOSSIERGOACCESS$INDEX
-
-
-
+for i in $(ls $DOSSIERGOACCESS);
+do 
+    echo "<p><a href=\""$i"\">$i</a></p>"   >> $DOSSIERGOACCESS$INDEX
+done
 echo "</body>" >> $DOSSIERGOACCESS$INDEX
 echo "</html>" >> $DOSSIERGOACCESS$INDEX
