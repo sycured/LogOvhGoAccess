@@ -1,20 +1,20 @@
 #!/bin/bash
 
-#Usage:         ./script_imediate.sh domain
-#ex:            ./script_imediate.sh ndd.fr
+#Usage:         ./script_immediate.sh domain
+#ex:            ./script_immediate.sh ndd.fr
 
 #nom du domaine
 #ex: ndd.fr
 SITE=$1
 DATE=$(date "+%d-%m-%Y")
 #Login compte OVH
-LOGIN=utilisateur # voir pour le recupérer via des variables environnement
+LOGIN=login # voir pour le recupérer via des variables environnement
 #Mot de passe compte OVH
 PASSWORD=password # voir pour le recupérer via des variables environnement
 #Dossier de stockage
 DOSSIER=$SITE/logs/today/
-DOSSIERGOACCESS=$SITE/goaccess/today/
-FILENAME=index
+DOSSIERGOACCESS=$SITE/goaccess/
+FILENAME=immediate
 #Numéro du cluster ovh https://logs.XXXXXXX.hosting.ovh.net/
 CLUSTER=cluster005
 #Creation de url pour récupérer les statistiques

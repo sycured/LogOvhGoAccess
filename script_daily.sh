@@ -12,12 +12,12 @@ MONTH=$(date --date=yesterday "+%m-%Y")
 #ex: ndd.fr
 SITE=$1
 #Login compte OVH
-LOGIN=utilisateur # voir pour le recupérer via des variables environnement
+LOGIN=login # voir pour le recupérer via des variables environnement
 #Mot de passe compte OVH
 PASSWORD=password # voir pour le recupérer via des variables environnement
 #Dossier de stockage
 DOSSIER=$SITE/logs/$MONTH/
-DOSSIERGOACCESS=$SITE/goaccess/$MONTH/
+DOSSIERGOACCESS=$SITE/goaccess/
 #Numéro du cluster ovh https://logs.XXXXXXX.hosting.ovh.net/
 CLUSTER=cluster005
 #Creation de url pour récupérer les statistiques
