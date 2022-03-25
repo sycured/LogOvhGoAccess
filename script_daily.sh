@@ -12,12 +12,12 @@ MONTH=$(date --date=yesterday "+%m-%Y")
 #ex: ndd.fr
 SITE=$1
 #Login compte OVH
-LOGIN=login # voir pour le recupérer via des variables environnement
+LOGIN=username # voir pour le recupérer via des variables environnement
 #Mot de passe compte OVH
 PASSWORD=password # voir pour le recupérer via des variables environnement
 #Dossier de stockage
-DOSSIER=$SITE/logs/$MONTH/
-DOSSIERGOACCESS=$SITE/goaccess/
+DOSSIER=logs/
+DOSSIERGOACCESS=www/
 #Numéro du cluster ovh https://logs.XXXXXXX.hosting.ovh.net/
 CLUSTER=cluster005
 #Creation de url pour récupérer les statistiques
@@ -31,3 +31,18 @@ wget -nv -nd -R A.gz -P$DOSSIER $LOGS/logs-$MONTH/$SITE-$DATE.log.gz --http-user
 # Traitement dans goaccess
 zcat -f $CURRENTLOG | goaccess --log-format=COMBINED -o $DOSSIERGOACCESS$DATE.html
 rm -rf $DOSSIER
+
+
+# Génération du fichier de listing des archives
+INDEX=index.html
+echo "<html>" >$DOSSIERGOACCESS$INDEX
+echo "<head>" >> $DOSSIERGOACCESS$INDEX
+echo "<title>Statistique du site $SITE</title>" >> $DOSSIERGOACCESS$INDEX
+echo "</head>" >> $DOSSIERGOACCESS$INDEX
+echo "<body>" >> $DOSSIERGOACCESS$INDEX
+echo "<h1>Statistique du site $SITE</h1>" >> $DOSSIERGOACCESS$INDEX
+
+
+
+echo "</body>" >> $DOSSIERGOACCESS$INDEX
+echo "</html>" >> $DOSSIERGOACCESS$INDEX

@@ -8,12 +8,12 @@
 SITE=$1
 DATE=$(date "+%d-%m-%Y")
 #Login compte OVH
-LOGIN=login # voir pour le recupérer via des variables environnement
+LOGIN=username # voir pour le recupérer via des variables environnement
 #Mot de passe compte OVH
 PASSWORD=password # voir pour le recupérer via des variables environnement
 #Dossier de stockage
-DOSSIER=$SITE/logs/today/
-DOSSIERGOACCESS=$SITE/goaccess/
+DOSSIER=logs/
+DOSSIERGOACCESS=www/
 FILENAME=immediate
 #Numéro du cluster ovh https://logs.XXXXXXX.hosting.ovh.net/
 CLUSTER=cluster005
