@@ -28,12 +28,15 @@ COPY ./script/script_immediate.sh /etc/periodic/15min/
 
 COPY ./script/script_daily.sh /etc/periodic/daily/
 
-RUN chmod +x /etc/periodic/15min/script_immediate.sh \
-    && chmod +x /etc/periodic/daily/script_daily.sh
-
 COPY boot.sh set_access_log.sh /docker-entrypoint.d/
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+RUN chmod +x /etc/periodic/15min/script_immediate.sh \
+    && chmod +x /etc/periodic/daily/script_daily.sh \
+    && chmod +x /docker-entrypoint.d/boot.sh \
+    && chmod +x /docker-entrypoint.d/set_access_log.sh \
+    && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 8000
 
