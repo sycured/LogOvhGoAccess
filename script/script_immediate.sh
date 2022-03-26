@@ -12,8 +12,8 @@ LOGIN=username # voir pour le recupérer via des variables environnement
 #Mot de passe compte OVH
 PASSWORD=password # voir pour le recupérer via des variables environnement
 #Dossier de stockage
-DOSSIER=logs/
-DOSSIERGOACCESS=www/
+DOSSIER=/var/www/logs/
+DOSSIERGOACCESS=/var/www/
 FILENAME=immediate
 #Numéro du cluster ovh https://logs.XXXXXXX.hosting.ovh.net/
 CLUSTER=cluster005
